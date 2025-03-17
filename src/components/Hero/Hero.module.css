@@ -1,0 +1,27 @@
+.hero {
+  position: relative;
+  color: var(--color-inputs-rgba);
+}
+
+.heroContent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.heroTitle {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 0.6667;
+  margin-bottom: 20px;
+}
+
+.heroSubtitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3333;
+  margin-bottom: 40px;
+}

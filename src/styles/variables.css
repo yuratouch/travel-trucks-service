@@ -1,0 +1,19 @@
+:root {
+  --color-main: 16, 24, 40;
+  --color-main-rgba: rgba(var(--color-main), 1);
+
+  --color-white: 255, 255, 255;
+  --color-white-rgba: rgba(var(--color-white), 1);
+
+  --color-inputs: 247, 247, 247;
+  --color-inputs-rgba: rgba(var(--color-inputs), 1);
+
+  --color-badges: 242, 244, 247;
+  --color-badges-rgba: rgba(var(--color-badges), 1);
+
+  --color-button: 228, 72, 72;
+  --color-button-rgba: rgba(var(--color-button), 1);
+
+  --color-button-hover: 216, 67, 67;
+  --color-button-hover-rgba: rgba(var(--color-button-hover), 1);
+}
