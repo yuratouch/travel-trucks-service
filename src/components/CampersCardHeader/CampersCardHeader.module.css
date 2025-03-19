@@ -29,7 +29,10 @@
   gap: 4px;
 }
 
+.active {
+  fill: var(--color-button-hover-rgba);
+}
+
 .favoriteButton:hover {
-  /* fill: var(--color-button-hover-rgba); */
   fill: var(--color-button-hover-rgba);
 }

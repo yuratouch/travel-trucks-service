@@ -1,13 +1,30 @@
 import styles from "./CampersCardHeader.module.css";
+import { useDispatch } from "react-redux";
+import { toggleFavorite } from "@/store/slices/favoritesSlice";
+import { useSelector } from "react-redux";
+import { selectIsFavorite } from "@/store/slices/favoritesSlice";
 
 function CampersCardHeader({ camper }) {
+  const dispatch = useDispatch();
+
+  const handleAddFavorite = () => {
+    dispatch(toggleFavorite(camper));
+  };
+
+  const isFavorite = useSelector(selectIsFavorite(camper.id));
+
   return (
     <>
       <div className={styles.header}>
         <h2 className={styles.heading}>{camper.name}</h2>
         <h2 className={styles.heading}>€{camper.price.toFixed(2)}</h2>
-        <button className={styles.camperCardButton}>
-          <svg className={styles.favoriteButton} width="26" height="24">
+        <button
+          className={`${styles.favoriteButton} ${
+            isFavorite ? styles.active : ""
+          }`}
+          onClick={handleAddFavorite}
+        >
+          <svg width="26" height="24">
             <use href="/src/assets/icons/sprite.svg#heart"></use>
           </svg>
         </button>
