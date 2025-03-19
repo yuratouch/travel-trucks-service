@@ -1,8 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "@/pages/Home/Home";
-import Catalog from "@/pages/Catalog/Catalog";
 import Header from "@/components/Header/Header";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
+
+const Catalog = lazy(() => import("@/pages/Catalog/Catalog"));
+const NotFoundPage = lazy(() => import("@/pages/NotFoundPage/NotFoundPage"));
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="catalog" element={<Catalog />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </>

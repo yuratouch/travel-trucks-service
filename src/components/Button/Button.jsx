@@ -1,16 +1,18 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Button.module.css";
 
-function Button({ buttonText, href, ...rest }) {
+function Button({ buttonText, href, className = "", ...rest }) {
+  const combinedClassName = `${styles.button} ${className}`.trim();
+
   if (href) {
     return (
-      <a className={styles.button} href={href} {...rest}>
+      <a className={combinedClassName} href={href} {...rest}>
         {buttonText}
       </a>
     );
   }
   return (
-    <NavLink to={href} className={styles.button}>
+    <NavLink to={href} className={combinedClassName}>
       {buttonText}
     </NavLink>
   );

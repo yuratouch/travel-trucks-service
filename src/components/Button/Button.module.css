@@ -1,7 +1,11 @@
 .button {
+  display: flex;
+  justify-content: center;
   color: var(--color-white-rgba);
   background-color: var(--color-button-rgba);
-  width: fit-content;
+  box-sizing: border-box;
+  white-space: nowrap;
+  max-width: 166px;
   padding: 16px 60px;
   border-radius: 200px;
   transition: background-color 0.3s ease;

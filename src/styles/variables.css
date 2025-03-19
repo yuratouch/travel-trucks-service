@@ -5,6 +5,9 @@
   --color-white: 255, 255, 255;
   --color-white-rgba: rgba(var(--color-white), 1);
 
+  --color-text: 71, 84, 103;
+  --color-text-rgba: rgba(var(--color-text), 1);
+
   --color-inputs: 247, 247, 247;
   --color-inputs-rgba: rgba(var(--color-inputs), 1);
 
@@ -16,4 +19,7 @@
 
   --color-button-hover: 216, 67, 67;
   --color-button-hover-rgba: rgba(var(--color-button-hover), 1);
+
+  --color-gray-ligth: 218, 221, 225;
+  --color-gray-ligth-rgba: rgba(var(--color-gray-ligth), 1);
 }

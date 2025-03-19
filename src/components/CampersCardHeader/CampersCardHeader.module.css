@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3333;
+}
+
+.heading:nth-child(1) {
+  flex-grow: 1;
+}
+
+.subHeader {
+  display: flex;
+  gap: 16px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.reviews,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.favoriteButton:hover {
+  /* fill: var(--color-button-hover-rgba); */
+  fill: var(--color-button-hover-rgba);
+}
