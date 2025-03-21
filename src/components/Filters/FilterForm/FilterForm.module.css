@@ -1,0 +1,6 @@
+.filtersHeading {
+  color: var(--color-text-rgba);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}

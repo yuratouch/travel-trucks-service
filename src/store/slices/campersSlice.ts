@@ -38,10 +38,12 @@ interface Camper {
 
 interface CampersState {
   items: Camper[];
+  loader: boolean;
 }
 
 const initialState: CampersState = {
   items: [],
+  loader: false,
 };
 
 const campersSlice = createSlice({
@@ -51,22 +53,25 @@ const campersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, (state) => {
+        state.loader = true;
         console.log("fetchCampers.pending");
       })
       .addCase(
         fetchCampers.fulfilled,
         (state, action: PayloadAction<{ items: Camper[] }>) => {
-          console.log("fetchCampers.fulfilled");
-          console.log("action.payload", action.payload.items);
           state.items = action.payload.items;
+          state.loader = false;
         }
       )
       .addCase(fetchCampers.rejected, (state, action) => {
         console.log("fetchCampers.rejected", action.error);
+        state.loader = false;
       });
   },
 });
 
+export const selectLoader = (state: { campers: CampersState }) =>
+  state.campers.loader;
 export const selectCampers = (state: { campers: CampersState }) =>
   state.campers.items;
 export default campersSlice.reducer;

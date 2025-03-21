@@ -14,7 +14,11 @@ function CampersCard({ camper }) {
       <div className={styles.info}>
         <CampersCardHeader camper={camper} />
         <CampersCardDescription description={camper.description} />
-        <Button buttonText="Show more" href="/" />
+        <Button
+          buttonText="Show more"
+          href={`/catalog/${camper.id}`}
+          target="_blank"
+        />
       </div>
     </li>
   );

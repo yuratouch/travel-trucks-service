@@ -1,5 +1,5 @@
 import styles from "./Catalog.module.css";
-import Filters from "@/components/Filters/Filters";
+import Sidebar from "@/components/Sidebar/Sidebar";
 import CampersList from "@/components/CampersList/CampersList";
 import Container from "@/components/Container/Container";
 
@@ -7,7 +7,7 @@ function Catalog() {
   return (
     <div>
       <Container className={styles.catalogPage}>
-        <Filters />
+        <Sidebar />
         <CampersList />
       </Container>
     </div>

@@ -6,15 +6,20 @@ function Button({ buttonText, href, className = "", ...rest }) {
 
   if (href) {
     return (
-      <a className={combinedClassName} href={href} {...rest}>
+      <NavLink
+        to={href}
+        className={combinedClassName}
+        target={rest.target || "_self"}
+      >
         {buttonText}
-      </a>
+      </NavLink>
     );
   }
+
   return (
-    <NavLink to={href} className={combinedClassName}>
+    <button className={combinedClassName} {...rest}>
       {buttonText}
-    </NavLink>
+    </button>
   );
 }
 

@@ -20,6 +20,9 @@
   --color-button-hover: 216, 67, 67;
   --color-button-hover-rgba: rgba(var(--color-button-hover), 1);
 
+  --color-gray: 108, 113, 123;
+  --color-gray-rgba: rgba(var(--color-gray));
+
   --color-gray-ligth: 218, 221, 225;
   --color-gray-ligth-rgba: rgba(var(--color-gray-ligth), 1);
 }
