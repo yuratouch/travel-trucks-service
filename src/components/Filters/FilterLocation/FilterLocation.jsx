@@ -28,7 +28,7 @@ const FilterLocation = () => {
       </label>
       <div className={styles.locationInputWrapper}>
         <svg width="20" height="20" className={styles.locationIcon}>
-          <use href="/src/assets/icons/sprite.svg#map"></use>
+          <use href="/icons/sprite.svg#map"></use>
         </svg>
         <input
           type="text"

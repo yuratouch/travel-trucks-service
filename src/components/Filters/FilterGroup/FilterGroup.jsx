@@ -15,7 +15,7 @@ function FilterGroup({ title, name, type, options, register }) {
             />
             <div className={styles.badgeContent}>
               <svg width="32" height="32">
-                <use href={`/src/assets/icons/sprite.svg#${option.icon}`} />
+                <use href={`/icons/sprite.svg#${option.icon}`} />
               </svg>
               <span>{option.label}</span>
             </div>

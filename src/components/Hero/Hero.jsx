@@ -7,9 +7,9 @@ function Hero() {
   return (
     <div className={styles.hero}>
       <picture>
-        <source srcSet="/src/assets/images/hero/hero.jpg 1x, /src/assets/images/hero/hero@2x.jpg 2x" />
+        <source srcSet="/images/hero/hero.jpg 1x, /images/hero/hero@2x.jpg 2x" />
         <img
-          src="/src/assets/images/hero/hero.jpg"
+          src="/images/hero/hero.jpg"
           alt="Beautiful sunset with TravelTrucks"
         />
       </picture>

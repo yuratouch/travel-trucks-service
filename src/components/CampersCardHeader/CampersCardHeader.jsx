@@ -25,14 +25,14 @@ function CampersCardHeader({ camper }) {
           onClick={handleAddFavorite}
         >
           <svg width="26" height="24">
-            <use href="/src/assets/icons/sprite.svg#heart"></use>
+            <use href="/icons/sprite.svg#heart"></use>
           </svg>
         </button>
       </div>
       <div className={styles.subHeader}>
         <div className={styles.reviews}>
           <svg width="16" height="16" fill="#FFC531">
-            <use href="/src/assets/icons/sprite.svg#star"></use>
+            <use href="/icons/sprite.svg#star"></use>
           </svg>
           <p>
             {camper.rating} ({camper.reviews.length} Reviews)
@@ -40,7 +40,7 @@ function CampersCardHeader({ camper }) {
         </div>
         <div className={styles.location}>
           <svg width="16" height="16">
-            <use href="/src/assets/icons/sprite.svg#map"></use>
+            <use href="/icons/sprite.svg#map"></use>
           </svg>
           <p>{camper.location}</p>
         </div>
