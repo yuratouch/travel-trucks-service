@@ -1,7 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchCampers } from "../operations";
 
-interface Camper {
+interface CamperGalleryItem {
+  thumb: string;
+  original: string;
+}
+
+interface CamperReview {
+  reviewer_name: string;
+  reviewer_rating: number;
+  comment: string;
+}
+
+export interface Camper {
   id: string;
   name: string;
   price: number;
@@ -25,15 +36,8 @@ interface Camper {
   microwave: boolean;
   gas: boolean;
   water: boolean;
-  gallery: Array<{
-    thumb: string;
-    original: string;
-  }>;
-  reviews: Array<{
-    reviewer_name: string;
-    reviewer_rating: number;
-    comment: string;
-  }>;
+  gallery: CamperGalleryItem[];
+  reviews: CamperReview[];
 }
 
 interface CampersState {
@@ -70,8 +74,4 @@ const campersSlice = createSlice({
   },
 });
 
-export const selectLoader = (state: { campers: CampersState }) =>
-  state.campers.loader;
-export const selectCampers = (state: { campers: CampersState }) =>
-  state.campers.items;
 export default campersSlice.reducer;

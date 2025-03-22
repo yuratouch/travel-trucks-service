@@ -1,8 +1,9 @@
 import styles from "./CampersList.module.css";
 import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { fetchCampers } from "@/store/operations";
-import { selectCampers, selectLoader } from "@/store/slices/campersSlice";
+import { selectLoader } from "@/store/selectors/campersSelectors";
+import { selectFilteredCampers } from "@/store/selectors/filtersSelectors";
 import { useSelector } from "react-redux";
 import CampersCard from "@/components/CampersCard/CampersCard";
 import LoadMore from "@/components/LoadMore/LoadMore";
@@ -18,11 +19,21 @@ function CampersList() {
     dispatch(fetchCampers());
   }, [dispatch]);
 
-  const campers = useSelector(selectCampers) || [];
-  const visibleCampers = campers.slice(0, visibleCount);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const filteredCampers = useSelector(selectFilteredCampers) || [];
+  const visibleCampers = filteredCampers.slice(0, visibleCount);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 4);
+    setIsLoadingMore(true);
+  };
 
   const isLoading = useSelector(selectLoader);
-  const isLoadMoreHidden = visibleCount >= campers.length;
+  const isLoadMoreHidden = visibleCount >= filteredCampers.length;
+
+  const isNoResults = useMemo(() => {
+    return filteredCampers.length === 0 && !isLoading;
+  }, [filteredCampers, isLoading]);
 
   useEffect(() => {
     if (isLoadingMore) {
@@ -34,13 +45,14 @@ function CampersList() {
     }
   }, [visibleCount, isLoadingMore]);
 
-  const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 4);
-    setIsLoadingMore(true);
-  };
-
   return (
     <main className={styles.campersList}>
+      {isNoResults && (
+        <p className={styles.noResults}>
+          No campers match your filters. Please try adjusting your search
+          criteria.
+        </p>
+      )}
       <ul>
         {visibleCampers.map((camper) => {
           return <CampersCard camper={camper} key={camper.id} />;

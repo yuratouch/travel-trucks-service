@@ -9,7 +9,7 @@ function Loader({ isLoading }) {
   return (
     <PropagateLoader
       loading={isLoading}
-      color="#6f85d6"
+      color="#E44848"
       cssOverride={loaderCssOverride}
     />
   );

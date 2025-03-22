@@ -28,9 +28,3 @@ const favoritesSlice = createSlice({
 
 export default favoritesSlice.reducer;
 export const { toggleFavorite } = favoritesSlice.actions;
-
-export const selectFavorites = (state: { favorites: FavoritesState }) =>
-  state.favorites.favorites;
-export const selectIsFavorite =
-  (id: number) => (state: { favorites: FavoritesState }) =>
-    selectFavorites(state).some((favorite) => favorite.id === id);

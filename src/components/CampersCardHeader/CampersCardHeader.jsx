@@ -2,7 +2,7 @@ import styles from "./CampersCardHeader.module.css";
 import { useDispatch } from "react-redux";
 import { toggleFavorite } from "@/store/slices/favoritesSlice";
 import { useSelector } from "react-redux";
-import { selectIsFavorite } from "@/store/slices/favoritesSlice";
+import { selectIsFavorite } from "@/store/selectors/favoritesSelectors";
 
 function CampersCardHeader({ camper }) {
   const dispatch = useDispatch();

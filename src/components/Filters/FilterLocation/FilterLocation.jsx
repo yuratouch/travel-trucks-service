@@ -1,6 +1,26 @@
 import styles from "./FilterLocation.module.css";
+import { useDispatch } from "react-redux";
+import { setLocation } from "@/store/slices/filtersSlice";
+import { useCallback, useRef } from "react";
 
 const FilterLocation = () => {
+  const dispatch = useDispatch();
+  const debounceTimeout = useRef(null);
+
+  const handleChange = useCallback(
+    (event) => {
+      const value = event.target.value;
+      if (debounceTimeout.current) {
+        clearTimeout(debounceTimeout.current);
+      }
+
+      debounceTimeout.current = setTimeout(() => {
+        dispatch(setLocation(value));
+      }, 500);
+    },
+    [dispatch]
+  );
+
   return (
     <div className={styles.locationWrapper}>
       <label className={styles.locationLabel} htmlFor="location">
@@ -16,6 +36,7 @@ const FilterLocation = () => {
           name="location"
           placeholder="City"
           className={styles.locationInput}
+          onChange={handleChange}
         />
       </div>
     </div>
