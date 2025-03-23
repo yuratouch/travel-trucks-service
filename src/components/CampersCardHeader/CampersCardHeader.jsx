@@ -4,7 +4,7 @@ import { toggleFavorite } from "@/store/slices/favoritesSlice";
 import { useSelector } from "react-redux";
 import { selectIsFavorite } from "@/store/selectors/favoritesSelectors";
 
-function CampersCardHeader({ camper }) {
+function CampersCardHeader({ camper, isTruckPage = false }) {
   const dispatch = useDispatch();
 
   const handleAddFavorite = () => {
@@ -16,18 +16,26 @@ function CampersCardHeader({ camper }) {
   return (
     <>
       <div className={styles.header}>
-        <h2 className={styles.heading}>{camper.name}</h2>
-        <h2 className={styles.heading}>€{camper.price.toFixed(2)}</h2>
-        <button
-          className={`${styles.favoriteButton} ${
-            isFavorite ? styles.active : ""
+        <h2 className={`${styles.heading} ${styles.cardHeading}`}>
+          {camper.name}
+        </h2>
+        <div
+          className={`${styles.favoriteContainer} ${
+            isTruckPage ? styles.truckPageHidden : ""
           }`}
-          onClick={handleAddFavorite}
         >
-          <svg width="26" height="24">
-            <use href="/icons/sprite.svg#heart"></use>
-          </svg>
-        </button>
+          <h2 className={styles.heading}>€{camper.price.toFixed(2)}</h2>
+          <button
+            className={`${styles.favoriteButton} ${
+              isFavorite ? styles.active : ""
+            }`}
+            onClick={handleAddFavorite}
+          >
+            <svg width="26" height="24">
+              <use href="/icons/sprite.svg#heart"></use>
+            </svg>
+          </button>
+        </div>
       </div>
       <div className={styles.subHeader}>
         <div className={styles.reviews}>
@@ -44,6 +52,23 @@ function CampersCardHeader({ camper }) {
           </svg>
           <p>{camper.location}</p>
         </div>
+      </div>
+      <div
+        className={`${styles.favoriteContainer} ${
+          isTruckPage ? "" : styles.truckPageHidden
+        }`}
+      >
+        <h2 className={styles.heading}>€{camper.price.toFixed(2)}</h2>
+        <button
+          className={`${styles.favoriteButton} ${
+            isFavorite ? styles.active : ""
+          }`}
+          onClick={handleAddFavorite}
+        >
+          <svg width="26" height="24">
+            <use href="/icons/sprite.svg#heart"></use>
+          </svg>
+        </button>
       </div>
     </>
   );

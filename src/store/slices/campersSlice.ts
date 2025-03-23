@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchCampers } from "../operations";
+import { fetchCampers, fetchCamperById } from "../operations";
 
 interface CamperGalleryItem {
   thumb: string;
@@ -43,11 +43,13 @@ export interface Camper {
 interface CampersState {
   items: Camper[];
   loader: boolean;
+  selectedCamper: Camper | null;
 }
 
 const initialState: CampersState = {
   items: [],
   loader: false,
+  selectedCamper: null,
 };
 
 const campersSlice = createSlice({
@@ -70,6 +72,21 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.rejected, (state, action) => {
         console.log("fetchCampers.rejected", action.error);
         state.loader = false;
+      })
+      .addCase(fetchCamperById.pending, (state) => {
+        state.loader = true;
+        state.selectedCamper = null;
+      })
+      .addCase(
+        fetchCamperById.fulfilled,
+        (state, action: PayloadAction<Camper>) => {
+          state.selectedCamper = action.payload;
+          state.loader = false;
+        }
+      )
+      .addCase(fetchCamperById.rejected, (state) => {
+        state.loader = false;
+        state.selectedCamper = null;
       });
   },
 });

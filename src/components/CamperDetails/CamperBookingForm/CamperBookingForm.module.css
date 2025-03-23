@@ -1,0 +1,96 @@
+.wrapper {
+  border: 1px solid var(--color-gray-ligth-rgba);
+  border-radius: 10px;
+  padding: 44px 58px;
+  max-width: 640px;
+  width: 100%;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding-bottom: 8px;
+}
+
+.text {
+  line-height: 1.5;
+  color: var(--color-gray-rgba);
+  padding-bottom: 24px;
+}
+
+.input {
+  font-family: "Inter", sans-serif;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: var(--color-main-rgba);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-inputs-rgba);
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 14px;
+  box-sizing: border-box;
+}
+
+.textarea {
+  font-family: "Inter", sans-serif;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: var(--color-main-rgba);
+  width: 100%;
+  background-color: var(--color-inputs-rgba);
+  border-radius: 12px;
+  padding: 18px;
+  min-height: 118px;
+  margin: 14px 0 24px;
+  box-sizing: border-box;
+}
+
+.dateInputWrapper {
+  position: relative;
+}
+
+.datePickerWrapper {
+  position: absolute;
+  bottom: 100%;
+  z-index: 10;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.applyBtn {
+  background-color: var(--color-button-rgba);
+  color: #fff;
+  padding: 8px 32px;
+  border-radius: 200px;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.applyBtn:hover {
+  background-color: var(--color-button-hover-rgba);
+}
+
+.dateRange {
+  border-radius: 10px;
+}
+
+.error {
+  color: var(--color-button-hover-rgba);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.submitButton {
+  margin: 0 auto;
+}

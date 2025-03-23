@@ -1,2 +1,7 @@
+import { EQUIPMENT_FILTER_OPTIONS, TYPE_FILTER_OPTIONS } from "./filterOptions";
+
 export const CARDS_TO_SHOW = 4;
 export const CARDS_HEIGHT_TO_SCROLL = 740;
+
+export const FEATURE_TAG_OPTIONS =
+  EQUIPMENT_FILTER_OPTIONS.concat(TYPE_FILTER_OPTIONS);

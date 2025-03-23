@@ -21,7 +21,7 @@ function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/catalog" className={addActive}>
+            <NavLink to="/catalog" end className={addActive}>
               Catalog
             </NavLink>
           </li>

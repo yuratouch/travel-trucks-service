@@ -17,3 +17,17 @@ export const fetchCampers = createAsyncThunk(
     }
   }
 );
+
+export const fetchCamperById = createAsyncThunk(
+  "campers/fetchCamperById",
+  async (id: string, thunkAPI) => {
+    try {
+      const { data } = await axios(`campers/${id}`);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(
+        (error as any).message || "Failed to fetch camper"
+      );
+    }
+  }
+);

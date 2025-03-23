@@ -1,7 +1,6 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 12px;
   margin-bottom: 8px;
 }
 
@@ -11,7 +10,7 @@
   line-height: 1.3333;
 }
 
-.heading:nth-child(1) {
+.cardHeading {
   flex-grow: 1;
 }
 
@@ -31,6 +30,15 @@
 
 .active {
   fill: var(--color-button-hover-rgba);
+}
+
+.favoriteContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.truckPageHidden {
+  display: none;
 }
 
 .favoriteButton:hover {

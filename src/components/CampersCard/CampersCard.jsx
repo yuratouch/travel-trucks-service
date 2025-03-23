@@ -13,7 +13,10 @@ function CampersCard({ camper }) {
       />
       <div className={styles.info}>
         <CampersCardHeader camper={camper} />
-        <CampersCardDescription description={camper.description} />
+        <CampersCardDescription
+          description={camper.description}
+          isShort={true}
+        />
         <Button
           buttonText="Show more"
           href={`/catalog/${camper.id}`}

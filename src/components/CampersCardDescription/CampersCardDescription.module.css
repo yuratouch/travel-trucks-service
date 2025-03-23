@@ -2,4 +2,9 @@
   color: var(--color-text-rgba);
   line-height: 1.5;
   margin-bottom: 24px;
+  text-wrap: balance;
+}
+
+.truckPage {
+  margin-bottom: 60px;
 }
