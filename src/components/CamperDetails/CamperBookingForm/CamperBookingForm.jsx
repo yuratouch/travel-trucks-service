@@ -1,13 +1,13 @@
 import styles from "./CamperBookingForm.module.css";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import "izitoast/dist/css/iziToast.min.css";
+import iziToast from "izitoast";
 import { useForm, Controller } from "react-hook-form";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import { useState } from "react";
 import Button from "@/components/Button/Button";
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
 
 function CamperBookingForm() {
   const {

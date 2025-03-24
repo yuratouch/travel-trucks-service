@@ -1,24 +1,46 @@
 import styles from "./FilterLocation.module.css";
-import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+import { useCallback, useRef, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { setLocation } from "@/store/slices/filtersSlice";
-import { useCallback, useRef } from "react";
+import { selectLocation } from "@/store/selectors/filtersSelectors";
 
 const FilterLocation = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
+
+  const reduxLocation = useSelector(selectLocation);
+  const [locationValue, setLocationValue] = useState("");
+
   const debounceTimeout = useRef(null);
+
+  useEffect(() => {
+    const urlLocation = searchParams.get("location") || "";
+    setLocationValue(urlLocation);
+    dispatch(setLocation(urlLocation));
+  }, [searchParams, dispatch]);
+
+  useEffect(() => {
+    setLocationValue(reduxLocation);
+  }, [reduxLocation]);
 
   const handleChange = useCallback(
     (event) => {
       const value = event.target.value;
-      if (debounceTimeout.current) {
-        clearTimeout(debounceTimeout.current);
-      }
+      setLocationValue(value);
+
+      if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
 
       debounceTimeout.current = setTimeout(() => {
+        value
+          ? searchParams.set("location", value)
+          : searchParams.delete("location");
+        setSearchParams(searchParams);
+
         dispatch(setLocation(value));
       }, 500);
     },
-    [dispatch]
+    [searchParams, setSearchParams, dispatch]
   );
 
   return (
@@ -36,6 +58,7 @@ const FilterLocation = () => {
           name="location"
           placeholder="City"
           className={styles.locationInput}
+          value={locationValue}
           onChange={handleChange}
         />
       </div>

@@ -1,13 +1,5 @@
 import styles from "./CamperDetails.module.css";
-
-const vehicleConfig = [
-  { label: "Form", key: "form" },
-  { label: "Length", key: "length" },
-  { label: "Width", key: "width" },
-  { label: "Height", key: "height" },
-  { label: "Tank", key: "tank" },
-  { label: "Consumption", key: "consumption" },
-];
+import { CAMPER_DETAILS_CONFIG } from "@/configs/constants";
 
 function formatFormValue(value) {
   if (!value) return "—";
@@ -25,7 +17,7 @@ function CamperDetails({ camper }) {
     <div>
       <h3 className={styles.heading}>Vehicle Details</h3>
       <ul className={styles.list}>
-        {vehicleConfig.map(({ label, key }) => (
+        {CAMPER_DETAILS_CONFIG.map(({ label, key }) => (
           <li key={key} className={styles.item}>
             <span className={styles.text}>{label}</span>
             <span className={styles.text}>

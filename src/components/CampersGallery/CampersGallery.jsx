@@ -1,7 +1,6 @@
 import styles from "./CampersGallery.module.css";
 
 function CampersGallery({ gallery, alt }) {
-  console.log("gallery", gallery);
   return (
     <ul className={styles.gallery}>
       {gallery.map((item) => {

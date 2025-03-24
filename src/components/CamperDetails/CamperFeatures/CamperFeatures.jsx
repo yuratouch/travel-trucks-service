@@ -5,13 +5,12 @@ import { useOutletContext } from "react-router-dom";
 
 function CamperFeatures() {
   const { camper } = useOutletContext();
-  console.log("Camper in CamperFeatures:", camper);
 
   if (!camper) return null;
 
   return (
     <div className={styles.wrapper}>
-      <CamperBadgesContainer camper={camper} />
+      <CamperBadgesContainer camper={camper} isCatalog={false} />
       <CamperDetails camper={camper} />
     </div>
   );

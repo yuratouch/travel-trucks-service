@@ -60,7 +60,6 @@ const campersSlice = createSlice({
     builder
       .addCase(fetchCampers.pending, (state) => {
         state.loader = true;
-        console.log("fetchCampers.pending");
       })
       .addCase(
         fetchCampers.fulfilled,
@@ -70,7 +69,6 @@ const campersSlice = createSlice({
         }
       )
       .addCase(fetchCampers.rejected, (state, action) => {
-        console.log("fetchCampers.rejected", action.error);
         state.loader = false;
       })
       .addCase(fetchCamperById.pending, (state) => {

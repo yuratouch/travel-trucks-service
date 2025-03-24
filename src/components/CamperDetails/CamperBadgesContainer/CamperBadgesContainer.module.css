@@ -2,8 +2,35 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  position: relative;
+  overflow: hidden;
+  max-height: 160px;
+  transition: max-height 0.4s ease;
+}
+
+.collapsed {
+  max-height: 104px;
 }
 
 .badgesContainer {
   flex-grow: 1;
+}
+
+.catalogWithMargin {
+  margin-bottom: 24px;
+}
+
+.item {
+  list-style: none;
+}
+
+.toggleBtn {
+  margin-top: 8px;
+  background-color: transparent;
+  border: none;
+  color: var(--color-text-rgba);
+  cursor: pointer;
+  font-weight: 500;
+  display: block;
+  margin-left: auto;
 }

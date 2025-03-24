@@ -4,3 +4,23 @@
   line-height: 1.5;
   margin-bottom: 32px;
 }
+
+.buttonsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resetButton {
+  color: var(--color-main-rgba);
+  background-color: transparent;
+  border: 1px solid var(--color-gray-ligth-rgba);
+  margin: 0 auto;
+  transition: border-color 0.3s ease;
+}
+
+.resetButton:hover,
+.resetButton:focus,
+.resetButton:active {
+  border-color: var(--color-button-hover-rgba);
+  background-color: transparent;
+}

@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
-import Container from "../Container/Container";
+import { NavLink } from "react-router-dom";
+import Container from "@/components/Container/Container";
 
 function Header() {
   const addActive = ({ isActive }) =>

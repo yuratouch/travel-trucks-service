@@ -24,7 +24,6 @@ function CamperDetailsPage() {
   useEffect(() => {
     dispatch(fetchCamperById(truckId));
   }, [truckId, dispatch]);
-  console.log("camper", camper);
 
   if (isLoading) return <Loader />;
   if (!camper)
