@@ -2,15 +2,27 @@ import styles from "./CampersCardHeader.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "@/store/slices/favoritesSlice";
 import { selectIsFavorite } from "@/store/selectors/favoritesSelectors";
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 
 function CampersCardHeader({ camper, isTruckPage = false }) {
   const dispatch = useDispatch();
+  const isFavorite = useSelector(selectIsFavorite(camper.id));
 
+  function toggleFavoriteMessage(message) {
+    iziToast.success({
+      message: message,
+      position: "topRight",
+      timeout: 5000,
+    });
+  }
   function handleAddFavorite() {
     dispatch(toggleFavorite(camper));
+    const toggleMessage = isFavorite
+      ? `${camper.name} is off your list — maybe next time!`
+      : `Great choice! ${camper.name} added to your favorites.`;
+    toggleFavoriteMessage(toggleMessage);
   }
-
-  const isFavorite = useSelector(selectIsFavorite(camper.id));
 
   return (
     <>
