@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    { "source": "/catalog/:id", "destination": "/" },
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
