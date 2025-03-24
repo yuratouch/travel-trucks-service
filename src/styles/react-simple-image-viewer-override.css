@@ -1,0 +1,19 @@
+.react-simple-image-viewer__modal {
+  background-color: rgba(var(--color-white), 1) !important;
+}
+
+.react-simple-image-viewer__navigation {
+  color: var(--color-main-rgba) !important;
+}
+.react-simple-image-viewer__modal > span {
+  color: var(--color-main-rgba) !important;
+}
+
+.react-simple-image-viewer__close {
+  color: var(--color-main-rgba) !important;
+}
+
+.react-simple-image-viewer__modal img {
+  max-width: 70vw;
+  object-fit: contain;
+}

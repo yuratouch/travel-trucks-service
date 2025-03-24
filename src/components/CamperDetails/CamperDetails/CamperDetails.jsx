@@ -1,5 +1,5 @@
 import styles from "./CamperDetails.module.css";
-import { CAMPER_DETAILS_CONFIG } from "@/configs/constants";
+import { CAMPER_DETAILS_CONFIG } from "@/configs/configs";
 
 function formatFormValue(value) {
   if (!value) return "—";

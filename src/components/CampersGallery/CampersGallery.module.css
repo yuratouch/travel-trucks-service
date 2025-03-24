@@ -9,4 +9,5 @@
   height: 312px;
   object-fit: cover;
   border-radius: 10px;
+  cursor: zoom-in;
 }

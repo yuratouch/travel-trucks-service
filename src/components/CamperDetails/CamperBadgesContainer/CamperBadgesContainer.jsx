@@ -1,6 +1,6 @@
 import styles from "./CamperBadgesContainer.module.css";
 import { useState } from "react";
-import { FEATURE_TAG_OPTIONS } from "@/configs/constants";
+import { FEATURE_TAG_OPTIONS } from "@/configs/configs";
 import CamperBadge from "../CamperBadge/CamperBadge";
 
 function CamperBadgesContainer({ camper, isCatalog = false }) {

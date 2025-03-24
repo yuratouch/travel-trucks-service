@@ -10,7 +10,7 @@ import {
   CARDS_TO_SHOW,
   CARDS_HEIGHT_TO_SCROLL,
   SEARCH_PARAMS_CONFIG,
-} from "@/configs/constants.js";
+} from "@/configs/configs.js";
 import {
   selectLoader,
   selectCampers,
